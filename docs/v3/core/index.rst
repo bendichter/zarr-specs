@@ -837,6 +837,9 @@ every such value:
   string, with one prefix removed.
 - Any other value is read unchanged.
 
+An affected string therefore always gains exactly one prefix when it is
+written and loses exactly one when it is read, however many it already has.
+
 These rules apply to values only. The names of the members of an object are
 never changed.
 
@@ -855,6 +858,8 @@ For example:
      - ``"_str_NaN"``
    * - the string ``_str_NaN``
      - ``"_str__str_NaN"``
+   * - the string ``_str__str_NaN``
+     - ``"_str__str__str_NaN"``
    * - the string ``_str_hello``
      - ``"_str_hello"``
    * - the strings ``nan``, ``inf`` and ``N/A``
